@@ -46,6 +46,7 @@ either expressed or implied, of the FreeBSD Project.
 #include "zarray.h"
 #include "getopt.h"
 
+
 // Invoke:
 //
 // tagtest [options] input.pnm

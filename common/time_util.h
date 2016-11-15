@@ -37,9 +37,18 @@ either expressed or implied, of the FreeBSD Project.
 #include <time.h>
 #include <unistd.h>
 
+#ifdef WIN32
+#include <pthread.h>
+#include <windows.h>
+#endif
+
 #ifdef __cplusplus
 extern "C" {
 #endif
+
+//#ifdef WIN32
+typedef long suseconds_t;
+//#endif
 
 int64_t utime_now(); // blacklist-ignore
 int64_t utime_get_seconds(int64_t v);
@@ -49,7 +58,6 @@ void    utime_to_timespec(int64_t v, struct timespec *ts);
 
 int32_t  timeutil_usleep(int64_t useconds);
 uint32_t timeutil_sleep(unsigned int seconds);
-
 
 #ifdef __cplusplus
 }

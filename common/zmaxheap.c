@@ -38,6 +38,11 @@ either expressed or implied, of the FreeBSD Project.
 
 #include "zmaxheap.h"
 
+#ifdef WIN32
+#define random rand
+#define srandom srand
+#endif
+
 //                 0
 //         1               2
 //      3     4        5       6

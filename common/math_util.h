@@ -50,8 +50,10 @@ either expressed or implied, of the FreeBSD Project.
 #define to_radians(x) ( (x) * (M_PI / 180.0 ))
 #define to_degrees(x) ( (x) * (180.0 / M_PI ))
 
+#ifndef __MINGW32__
 #define max(A, B) (A < B ? B : A)
 #define min(A, B) (A < B ? A : B)
+#endif
 
 static inline int dequals(double a, double b)
 {

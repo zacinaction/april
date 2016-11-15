@@ -69,5 +69,10 @@ int32_t timeutil_usleep(int64_t useconds)
 uint32_t timeutil_sleep(unsigned int seconds)
 {
     // unistd.h function
-    return sleep(seconds);
+	//#ifdef WIN32
+	Sleep(1000*seconds);
+	return 0;
+	//#else
+	//return sleep(seconds);
+	//#endif
 }

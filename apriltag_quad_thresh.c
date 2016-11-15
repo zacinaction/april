@@ -45,6 +45,11 @@ either expressed or implied, of the FreeBSD Project.
 #include "zmaxheap.h"
 #include "postscript_utils.h"
 
+#ifdef WIN32
+#define random rand
+#define srandom srand
+#endif
+
 /*
 static inline uint32_t u64hash_1(uint64_t x) {
     x = ((x >> 16) ^ x) * 0x45d9f3b;
